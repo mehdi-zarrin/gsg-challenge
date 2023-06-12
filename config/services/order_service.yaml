@@ -1,0 +1,8 @@
+services:
+  App\Service\Order\OrderReader:
+    bind:
+      '$orderListItemsPerPage': 3
+
+  _defaults:
+    autowire: true
+    autoconfigure: true

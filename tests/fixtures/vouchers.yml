@@ -1,0 +1,6 @@
+App\Entity\Voucher:
+  voucher{0..10}:
+    amount: 10
+    validUntil: <datetime()>
+    isActive: true
+    code: <(substr(md5(uniqid(rand(), true)),0,4))>

@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  php-test:
+    build:
+      context: ./
+    volumes:
+      - .:/app:cached
+    working_dir: /app
+    depends_on:
+      - mysql-test
+    environment:
+      - APP_ENV=test
+    container_name: test_gsg_php
+
+  mysql-test:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DB_NAME: gsg_test
+      MYSQL_DATABASE: "gsg_test"
+    ports:
+      - 3309:3306
+    container_name: test_gsg_mysql

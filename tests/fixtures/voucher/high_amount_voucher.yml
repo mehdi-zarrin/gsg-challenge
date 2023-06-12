@@ -1,0 +1,6 @@
+App\Entity\Voucher:
+  voucher:
+    amount: 1000
+    validUntil: <dateTimeBetween('+10 days', '+100 days')>
+    isActive: true
+    code: 1234

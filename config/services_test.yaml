@@ -1,0 +1,10 @@
+services:
+    App\Service\Order\OrderReader:
+        bind:
+            '$orderListItemsPerPage': 1
+
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    MTZ\BehatContext\Doctrine\DoctrineContext:

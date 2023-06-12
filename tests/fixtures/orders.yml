@@ -1,0 +1,5 @@
+App\Entity\Order:
+  order{0..10}:
+    subtotal: 100
+    discountTotal: 10
+    grandTotal: 90

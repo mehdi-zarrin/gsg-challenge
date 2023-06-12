@@ -20,7 +20,7 @@ class ORMCollectionBuilderTest extends DatabaseTestCase
         $collectionBuilder = new ORMCollectionBuilder($mockRouter);
 
         /** @var VoucherRepository $voucherRepository */
-        $voucherRepository = $this->getContainer()->get('App\Repository\VoucherRepository');
+        $voucherRepository = $this->getContainer()->get(VoucherRepository::class);
         $queryBuilder = $voucherRepository->createQueryBuilder('v');
         $adapter = $collectionBuilder->configure($queryBuilder, 'nnn', maxPerPage: 1);
         $result = $collectionBuilder->build($adapter, 1);

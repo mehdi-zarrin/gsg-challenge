@@ -20,7 +20,7 @@ class OrderWriterTest extends DatabaseTestCase
 
         $this->loader->load(['tests/fixtures/voucher/already_used_voucher.yml']);
         /** @var OrderWriter $orderWriter */
-        $orderWriter = $this->getContainer()->get('App\Service\Order\OrderWriter');
+        $orderWriter = $this->getContainer()->get(OrderWriter::class);
         $request = (new OrderDto())
             ->setAmount(10)
             ->setVoucherCode('1234');
@@ -38,7 +38,7 @@ class OrderWriterTest extends DatabaseTestCase
 
         $this->loader->load(['tests/fixtures/voucher/high_amount_voucher.yml']);
         /** @var OrderWriter $orderWriter */
-        $orderWriter = $this->getContainer()->get('App\Service\Order\OrderWriter');
+        $orderWriter = $this->getContainer()->get(OrderWriter::class);
         $request = (new OrderDto())
             ->setAmount(10)
             ->setVoucherCode('1234');
@@ -55,7 +55,7 @@ class OrderWriterTest extends DatabaseTestCase
 
         $this->loader->load(['tests/fixtures/voucher/expired_voucher.yml']);
         /** @var OrderWriter $orderWriter */
-        $orderWriter = $this->getContainer()->get('App\Service\Order\OrderWriter');
+        $orderWriter = $this->getContainer()->get(OrderWriter::class);
         $request = (new OrderDto())
             ->setAmount(10)
             ->setVoucherCode('1234');

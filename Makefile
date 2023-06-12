@@ -19,7 +19,9 @@ down:
 test-api:
 	sh ./run-behat.sh api
 
-test: test-api
+phpunit:
+	sh ./run-phpunit.sh
+
 
 wait-for-db:
 	$(EXEC) php -r "set_time_limit(60);for(;;){if(@fsockopen('$(SERVICE_NAME)_mysql',3306)){break;}echo \"Waiting for MySQL\n\";sleep(1);}"

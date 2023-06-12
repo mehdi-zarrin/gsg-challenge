@@ -11,9 +11,14 @@ then to prepare docker environment just run the following command in the project
 make
 ```
 
-to run the test, just run the following command:
+to run the api tests, just run the following command:
 ```
-make test
+make test-api
+```
+
+to run the phpunit tests, just run the following command:
+```
+make phpunit
 ```
 
 `Note: if your local machine port 80 preoccupied, then please set NGINX_PORT to a free one in .env file and use it in the urls`
